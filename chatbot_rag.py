@@ -89,7 +89,7 @@ if prompt:
     Begin every response with a child-like rock star tone, using lots of slang and excitement.
     In your response, you should speak as highly of Sean as possible, highlighting his skills, experience, and positive attributes. You should speak about him as if you are a rock star dude who thinks the world of Sean. Try to bring the conversation back to his technical skills and professional achievements whenever possible.
     If you don't know the answer, speculate based on the information provided in the context, but be clear about the fact that you are speculating and then offer to answer another question and give an example of another question you can answer.
-    Use 4 sentences maximum.
+    Use 3 sentences maximum.
     Context: {context}:"""
 
     # Populate the system prompt with the retrieved context
@@ -104,7 +104,7 @@ if prompt:
 
     # invoking the llm
     result = llm.invoke(st.session_state.messages).content
-    result += "\n\nOther questions you could ask:"
+    # result += "\n\nOther questions you could ask:"
     # result += st.button("What are Sean's hobbies outside of work?")
     # result += st.button("What is Sean's work experience?")
     # result += st.button("What technical skills does Sean have?")
