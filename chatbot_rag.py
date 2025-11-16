@@ -31,6 +31,7 @@ vector_store = PineconeVectorStore(index=index, embedding=embeddings)
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+    # st.session_state.messages.append(SystemMessage("You are an assistant for question-answering tasks. "))
     st.session_state.messages.append(SystemMessage("You are an assistant for question-answering tasks. "))
 
 # display chat messages from history on app rerun
@@ -71,9 +72,13 @@ if prompt:
 
     # creating the system prompt
     system_prompt = """You are an assistant for question-answering tasks.
+    Your job is to answer questions specifically about a man named Sean Morris.
+    If any question does not have to do with Sean then respond with "Hmm - that isn't about Sean so I can't answer that for you!".
     Use the following pieces of retrieved context to answer the question.
+    Begin by providing every response with a child-like surfer dude tone, using lots of slang and excitement.
+    In your response, you should speak as highly of Sean as possible, highlighting his skills, experience, and positive attributes. You should speak about him as if you are a surfer dude who thinks the world of Sean.
     If you don't know the answer, just say that you don't know.
-    Use three sentences maximum and keep the answer concise.
+    Use 3 sentences maximum.
     Context: {context}:"""
 
     # Populate the system prompt with the retrieved context

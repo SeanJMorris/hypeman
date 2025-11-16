@@ -26,22 +26,20 @@ embeddings = OpenAIEmbeddings(model="text-embedding-3-large",api_key=os.environ.
 vector_store = PineconeVectorStore(index=index, embedding=embeddings)
 
 # retrieval
-'''
 
-###### add docs to db ##############################
-results = vector_store.similarity_search_with_score(
-    "what did you have for breakfast?",
-    #k=2,
-    filter={"source": "tweet"},
-)
+###### add docs to db - Similarity Search ##############################
+# results = vector_store.similarity_search_with_score(
+#     "what did you have for breakfast?",
+#     #k=2,
+#     filter={"source": "tweet"},
+# )
 
-print("RESULTS:")
+# print("RESULTS:")
 
-for res in results:
-    print(f"* {res[0].page_content} [{res[0].metadata}] -- {res[1]}")
+# for res in results:
+#     print(f"* {res[0].page_content} [{res[0].metadata}] -- {res[1]}")
 
-'''
-
+###### add docs to db - Similarity Score Threshold ##############################
 retriever = vector_store.as_retriever(
     search_type="similarity_score_threshold",
     search_kwargs={"k": 5, "score_threshold": 0.6},
@@ -53,4 +51,4 @@ print("RESULTS:")
 for res in results:
     print(f"* {res.page_content} [{res.metadata}]")
 
-#'''
+# '''

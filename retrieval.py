@@ -30,7 +30,8 @@ retriever = vector_store.as_retriever(
     search_type="similarity_score_threshold",
     search_kwargs={"k": 5, "score_threshold": 0.5},
 )
-results = retriever.invoke("what is retrieval augmented generation?")
+# results = retriever.invoke("Has Sean ever worked with software developers?")
+results = retriever.invoke("How long has Sean worked at Abt?")
 
 # show results
 print("RESULTS:")

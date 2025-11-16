@@ -42,7 +42,7 @@ vector_store = PineconeVectorStore(index=index, embedding=embeddings)
 # adding the documents
 
 document_1 = Document(
-    page_content="I had chocalate chip pancakes and scrambled eggs for breakfast this morning.",
+    page_content="I had some sweet chocolate chip pancakes and scrambled eggs for breakfast this morning.",
     metadata={"source": "tweet"},
 )
 

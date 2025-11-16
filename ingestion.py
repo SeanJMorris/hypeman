@@ -12,7 +12,9 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_core.documents import Document
 
 #documents
-from langchain_community.document_loaders import PyPDFDirectoryLoader
+# from langchain_community.document_loaders import PyPDFDirectoryLoader # this was necessary in the original but not now because we're only uploading markdown files
+# from langchain.document_loaders import DirectoryLoader # after I ran this, I got a message that this was deprecated even though it ran successfully.
+from langchain_community.document_loaders import DirectoryLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 load_dotenv()
@@ -35,6 +37,8 @@ if index_name not in existing_indexes:
     while not pc.describe_index(index_name).status["ready"]:
         time.sleep(1)
 
+# pc.delete_index(index_name)
+
 index = pc.Index(index_name)
 
 # initialize embeddings model + vector store
@@ -44,7 +48,8 @@ vector_store = PineconeVectorStore(index=index, embedding=embeddings)
 
 
 # loading the PDF document
-loader = PyPDFDirectoryLoader("documents/")
+# loader = PyPDFDirectoryLoader("documents/") # original line for pdfs
+loader = DirectoryLoader("documents/")
 
 raw_documents = loader.load()
 
