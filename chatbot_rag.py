@@ -12,7 +12,11 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 
+# import the project's own ingestion file
+from ingestion import ingest
+
 load_dotenv()
+# ingest()
 
 col1, col2 = st.columns(2)
 
