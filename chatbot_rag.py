@@ -123,24 +123,24 @@ if prompt:
     with st.chat_message("assistant"):
         st.markdown(result)
 
-        # Add three buttons in a single row
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            if st.button("First button"):
-                # st.markdown("You clicked the first button.")
-                # st.chat_input("Is Sean handsome?")
-                # first_question = "Is Sean handsome?"
-                    # st.session_state.messages.append(HumanMessage(first_question))
-                # prompt = st.chat_input("Ask anything about Sean! Such as about his work experience, skills, or hobbies!")
-                with st.chat_message("user"):
-                    st.chat_input("Is Sean handsome?")
-                    # st.markdown(prompt)
-                    # st.session_state.messages.append(HumanMessage(prompt))
-        with col2:
-            if st.button("Second button"):
-                st.markdown("You clicked the second button.")
-        with col3:
-            if st.button("Third button"):
-                st.markdown("You clicked the third button.")
+        # # Add three buttons in a single row
+        # col1, col2, col3 = st.columns(3)
+        # with col1:
+        #     if st.button("First button"):
+        #         # st.markdown("You clicked the first button.")
+        #         # st.chat_input("Is Sean handsome?")
+        #         # first_question = "Is Sean handsome?"
+        #             # st.session_state.messages.append(HumanMessage(first_question))
+        #         # prompt = st.chat_input("Ask anything about Sean! Such as about his work experience, skills, or hobbies!")
+        #         with st.chat_message("user"):
+        #             st.chat_input("Is Sean handsome?")
+        #             # st.markdown(prompt)
+        #             # st.session_state.messages.append(HumanMessage(prompt))
+        # with col2:
+        #     if st.button("Second button"):
+        #         st.markdown("You clicked the second button.")
+        # with col3:
+        #     if st.button("Third button"):
+        #         st.markdown("You clicked the third button.")
 
         st.session_state.messages.append(AIMessage(result))
