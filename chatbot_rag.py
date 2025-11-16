@@ -25,7 +25,8 @@ with col1:
     st.title("Sean's Hypeman")
 
 with col2:
-    st.image("/home/scjmorris/projects/hypeman/images/best_ever_sean_golden_020.png")
+    # st.image("/home/scjmorris/projects/hypeman/images/best_ever_sean_golden_020.png")
+    st.image("images/best_ever_sean_golden_020.png")
 
 # initialize pinecone database
 pc = Pinecone(api_key=os.environ.get("PINECONE_API_KEY"))
