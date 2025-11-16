@@ -14,3 +14,6 @@ wheels/
 
 # .env files
 .env
+
+# requirements.txt because you'll let streamlit use uv
+requirements.txt
