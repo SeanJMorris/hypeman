@@ -21,7 +21,7 @@ load_dotenv()
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown("")
+    # st.markdown("")
     st.title("Sean's Hypeman")
 
 with col2:
@@ -42,7 +42,7 @@ vector_store = PineconeVectorStore(index=index, embedding=embeddings)
 # initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
-    st.session_state.messages.append(AIMessage("Hi! I'm Sean's Hypeman Bot. I'm an LLM that has been trained by Sean to answer questions that you might have about him. Heads up -- like any good hypeman, I'm primed to say only positive things about him!"))
+    st.session_state.messages.append(AIMessage("Hi! I'm Larry, Sean's personal Hypeman bot. I'm an LLM that has been trained by Sean to answer any question that you might have about him. Heads up -- like any good hypeman, I'm primed to say only positive things about him!"))
 
     st.session_state.messages.append(SystemMessage("You are an assistant for question-answering tasks. "))
 
